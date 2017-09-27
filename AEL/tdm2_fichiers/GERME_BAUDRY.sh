@@ -29,3 +29,7 @@ echo "** Q2 :"
 nomXML='[a-zA-Z:_][a-zA-Z0-9:_.-]*'
 
 #egrep -m 10 --color=auto $nomXML html/contact.html
+
+echo "** EXO 3"
+
+egrep --color=auto 
