@@ -1,0 +1,6 @@
+#!/bin/bash
+
+## EX1
+
+# Q1
+egrep --color=auto nez Cyrano.txt
