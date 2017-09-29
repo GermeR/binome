@@ -1,30 +1,32 @@
-Create table Article (
+DROP SCHEMA Boutique CASCADE;
 
-	idArticle Integer,
-	nameArticle varchar(50) NOT NULL,
-	colorArticle varchar(50) NOT NULL,
-	PRIMARY_KEY (idArticle)
-);
+CREATE SCHEMA Boutique
+
+Create table Articles (
+	aid Integer,
+	anom varchar(50) NOT NULL,
+	acoul varchar(50) NOT NULL,
+	PRIMARY KEY (aid)
+)
 
 
 Create table Fournisseurs (
-	
-	idFournisseurs Integer,
-	nameFournisseurs varchar(50) NOT NULL,
-	adresseFournisseurs varchar(100) NOT NULL,
-	PRIMARY_KEY (idFournisseurs),
-);
+	fid Integer,
+	fnom varchar(50) NOT NULL,
+	fad varchar(100) NOT NULL,
+	PRIMARY KEY (fid)
+)
 
 Create table Catalogue (
-
-	idFournisseurs Integer NOT NULL,
-	idArticle Integer NOT NULL,
-	prix double NOT NULL,
-	PRIMARY KEY (idFournisseurs,idArticle),
-	FOREIGN KEY (idFournisseurs) REFERENCES Fournisseurs (idFournisseurs)
+	fid Integer NOT NULL,
+	aid Integer NOT NULL,
+	prix decimal(6,2) NOT NULL,
+	CHECK (prix >= 0),
+	PRIMARY KEY (fid,aid),
+	FOREIGN KEY (fid) REFERENCES Fournisseurs (fid)
 	ON DELETE CASCADE
 	ON UPDATE CASCADE,
-	FOREIGN KEY (idArticle) REFERENCES Article (idArticle)
+	FOREIGN KEY (aid) REFERENCES Articles (aid)
 	ON DELETE CASCADE
-	ON UPDATE CASCADE;
+	ON UPDATE CASCADE
 );
