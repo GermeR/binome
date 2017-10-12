@@ -1,0 +1,60 @@
+##EX1 :
+
+#Q1 :
+Lors de l'insertion de certaines données, le champ prix est trop petit
+:= pour résoudre cela nous pouvons augmenter la taille de notre champ decimal.
+
+#Q2 :
+cette commande nous affiche la liste des contraintes appliquées à nos tables SQL.
+
+#Q3 :
+psql:inserts.sql:53: ERREUR:  champ numérique en dehors des limites
+DETAIL:  Un champ de précision 6 et d'échelle 2 doit être arrondi à une valeur
+absolue inférieure à 10^4.
+
+#Q4 :
+insert into articles values(1,'bonjour','Blouge');
+
+:=
+ERREUR:  la valeur d'une clé dupliquée rompt la contrainte unique « articles_pkey »
+DETAIL:  La clé « (idarticle)=(1) » existe déjà.
+
+#Q5 :
+insert into Catalogue values(1,13,-5);
+
+:=
+ERREUR:  la nouvelle ligne viole la contrainte de vérification « catalogue » de la relation « catalogue_prix_check »
+DETAIL:  La ligne en échec contient (1, 13, -5.00)
+
+#Q6 :
+
+delete from Articles where idArticle=1;
+DELETE 1
+(:= Grace (à cause ?) de notre ON DELETE CASCADE)
+
+select * from Catalogue where idArticle=1;
+ idfournisseurs | idarticle | prix 
+----------------+-----------+------
+(0 rows)
+(:= Résultat attendu grace à au ON DELETE CASCADE)
+
+##EX2 :
+
+#Q1 :
+select fnom as fournisseur , fad as adresse from fournisseurs;
+
+#Q2 :
+select fnom from fournisseurs as f join catalogue as a on f.fid = a.fid where prix >= 10 AND prix <=20;
+
+#Q3 :
+select anom from articles as a join catalogue as c on a.aid = c.aid where prix<20 AND (acoul='rouge' OR acoul='vert');
+
+#Q4 :
+
+    #MAX :
+    	 select max(prix) from catalogue;
+    #MIN :
+    	 select min(prix) from catalogue;
+
+#Q5 :
+select fid from catalogue as c join articles as a on a.aid=c.aid where a.acoul='magenta' AND fid in (select fid from catalogue as c join articles as a on c.aid = a.aid where acoul!='argente');

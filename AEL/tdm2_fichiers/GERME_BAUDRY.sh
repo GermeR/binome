@@ -42,4 +42,4 @@ egrep --color=auto '([^,])*,([^,])*,Ruelle ([^,]*,?)*' bano-59009.csv
 
 echo "** Q3 :"
 
-egrep --color=auto '^([^,]*)' bano-59009.csv
+egrep --color=auto '^([^,]*),[^,],([^(a-z)] ?)*' bano-59009.csv
