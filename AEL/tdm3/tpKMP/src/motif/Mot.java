@@ -5,7 +5,7 @@ package motif;
  * facteur est ici appele motif, pour reprendre le vocabulaire de ce genre
  * d'algorithmes. un Mot est forme d'une chaine de caracteres (String)
  *
- * @author Anne-Cecile Caron
+ * @author GERME Robin && BAUDRY Oscar
  */
 
 public class Mot {
@@ -201,12 +201,8 @@ retourner -1 ;
 	 * argument, le motif.
 	 */
 	public static void main(String args[]) {
-		Mot mot = new Mot(args[0]);
-		
-		System.out.println("AutomateNaïf: " + mot.indiceMotifNaif(new Mot(args[1])));
-		System.out.println("AutomateMotif : " + mot.indiceMotifAutomate(new Mot(args[1])));
-		System.out.println("calculerFonctionPrefixe : " + mot.calculerFonctionPrefixe(new Mot(args[1])));
-		System.out.println("indice : " + mot.indiceMotifKMP(new Mot(args[1])));
+	    Mot mot = new Mot(args[0]) ;
+	    System.out.println("indice : "+ mot.indiceMotifKMP(new Mot(args[1]))) ;
 	}
 
 }

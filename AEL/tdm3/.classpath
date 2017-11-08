@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="tpKMP/src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/home/l3/germe/Téléchargements/automateMotif.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
