@@ -1,0 +1,37 @@
+Question 3 : 
+
+femme(mia)
+femme(yolande)
+femme \= lapin
+
+
+Question 4 :
+
+femme(X)
+
+Question 5 :
+
+aime(vincent,X),femme(X)
+
+Question 6 :
+
+
+aime(vincent,X),homme(X)
+le type homme n'existe pas, il faut le rajouter  on peut le definir comme sa : 
+
+homme(X) :- not(femme(X)).
+
+ou alors fait :
+
+homme(vincent)
+homme(marcellus)
+
+Question 7 : 
+
+est_jaloux_de(vincent,X).
+
+Question 8 :
+
+
+est_jaloux_de(vincent,_)
+
