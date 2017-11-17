@@ -20,7 +20,7 @@ Create table Fournisseurs (
 Create table Catalogue (
 	fid Integer NOT NULL,
 	aid Integer NOT NULL,
-	prix decimal(6,2) NOT NULL,
+	prix decimal(9,2) NOT NULL,
 	CHECK (prix >= 0),
 	PRIMARY KEY (fid,aid),
 	FOREIGN KEY (fid) REFERENCES Fournisseurs (fid)
